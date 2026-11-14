@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import PathJourney from "../components/PathJourney";
 import SelectedWorks from "../components/SelectedWorks";
+import Process from "../components/Process";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <PathJourney />
       <SelectedWorks />
+      <Process />
     </main>
   );
 }

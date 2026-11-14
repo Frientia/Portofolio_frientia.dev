@@ -203,25 +203,68 @@ export const process = {
       no: "01",
       title: "Brief",
       body: "Ngobrol dulu, pahami masalahnya, dan sepakati apa yang mau dibuat. Scope jelas = hasil jelas.",
-      file: { name: "brief.txt", kind: "text", tint: "pink" },
+      file: {
+        name: "brief.txt",
+        kind: "text",
+        tint: "pink",
+        // EDIT: isi preview file
+        preview: [
+          "PROJECT : Portfolio Revamp",
+          "CLIENT  : Personal",
+          "GOAL    : Rombak tampilan jadi editorial playful",
+          "SCOPE   : Design + Front-end",
+          "STACK   : Next.js · Tailwind · Motion · Lenis",
+          "STATUS  : Kickoff ✔",
+        ],
+      },
     },
     {
       no: "02",
       title: "Design",
       body: "Susun struktur, alur, dan tampilan. Prototipe kasar dulu, poles kemudian.",
-      file: { name: "design.fig", kind: "design", tint: "lilac" },
+      file: {
+        name: "design.fig",
+        kind: "design",
+        tint: "lilac",
+        preview: [],
+      },
     },
     {
       no: "03",
       title: "Build",
       body: "Saatnya ngoding. Backend PHP/MySQL, interaksi JavaScript, commit kecil tapi sering.",
-      file: { name: "app.php", kind: "code", tint: "mint" },
+      file: {
+        name: "app.php",
+        kind: "code",
+        tint: "mint",
+        // EDIT: isi preview file
+        preview: [
+          "<?php",
+          "// endpoint sederhana, siap pakai",
+          "$stmt = $pdo->prepare(",
+          '  "SELECT * FROM users WHERE id = ?"',
+          ");",
+          "$stmt->execute([$id]);",
+          "echo json_encode($stmt->fetch());",
+        ],
+      },
     },
     {
       no: "04",
       title: "Ship",
       body: "Uji, rapikan, deploy. Pantau setelah live dan iterate dari feedback.",
-      file: { name: "report.xlsx", kind: "sheet", tint: "butter" },
+      file: {
+        name: "report.xlsx",
+        kind: "sheet",
+        tint: "butter",
+        // EDIT: isi preview (baris tabel)
+        preview: [
+          ["Metric", "Target", "Hasil"],
+          ["Lighthouse", "95+", "98"],
+          ["Build", "clean", "clean"],
+          ["Uptime", "99%", "100%"],
+        ],
+      },
     },
   ],
 };
