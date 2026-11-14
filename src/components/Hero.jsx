@@ -1,84 +1,145 @@
 "use client";
-import { motion } from "framer-motion";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { profile, marquee, contact } from "../lib/content";
+import { scrollToId } from "../lib/scroll";
+import { MaskHeading, Reveal } from "./ui/Reveal";
+import { FigLabel, PillButton } from "./ui/Bits";
+import Marquee from "./Marquee";
+import { ArrowDown } from "lucide-react";
+
+const EASE = [0.22, 1, 0.36, 1];
 
 export default function Hero() {
+  const reduced = useReducedMotion();
+
+  const float = (dur = 6, y = 12, delay = 0) =>
+    reduced
+      ? {}
+      : {
+          animate: { y: [0, -y, 0], rotate: [0, 1.2, 0] },
+          transition: { duration: dur, repeat: Infinity, ease: "easeInOut", delay },
+        };
+
   return (
     <section
       id="hero"
-      className="relative flex flex-col items-center justify-center h-screen px-6 overflow-hidden text-white bg-gradient-to-b from-[#0d001a] to-[#1a0033]"
+      className="relative flex min-h-screen flex-col justify-between overflow-hidden pt-28 md:pt-32"
     >
-      {/* Animated background circles */}
-        <motion.div
-        animate={{ y: [0, 20, 0], rotate: 360 }} // float + rotate
-        transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-        className="absolute w-[400px] h-[400px] rounded-full bg-purple-900 opacity-20 -top-20 -left-20"
+      {/* Blob pastel dekoratif */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-pink opacity-50 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-16 top-1/3 h-80 w-80 rounded-full bg-sky opacity-40 blur-3xl"
+      />
+
+      <div className="relative mx-auto w-full max-w-6xl px-5">
+        {/* Kicker + availability */}
+        <Reveal className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <FigLabel fig={profile.kicker} />
+          <span className="font-mono-label inline-flex items-center gap-2 rounded-full border border-ink/10 bg-card px-3 py-1.5 text-ink-soft">
+            <span className="h-2 w-2 rounded-full bg-accent2" aria-hidden />
+            {profile.availability}
+          </span>
+        </Reveal>
+
+        {/* Headline raksasa */}
+        <MaskHeading
+          as="h1"
+          lines={profile.headline}
+          className="display-hero text-ink"
         />
 
-        <motion.div
-        animate={{ y: [0, -15, 0], rotate: -360 }} // float + rotate
-        transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
-        className="absolute w-[300px] h-[300px] rounded-full bg-purple-700 opacity-20 -bottom-20 -right-20"
-        />
+        {/* Nama + peran */}
+        <Reveal delay={0.15} className="mt-6 flex flex-wrap items-end gap-x-4 gap-y-2">
+          <span className="font-display text-xl text-accent md:text-3xl">
+            {profile.name}
+          </span>
+          <span className="font-mono-label pb-1 text-ink-soft">
+            {profile.role} · Indonesia
+          </span>
+        </Reveal>
 
-        {/* Profile photo with smooth floating */}
-        <motion.div
-        animate={{ y: [0, -10, 0] }} // hanya gerakan vertikal
-        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-purple-500 shadow-xl mb-4"
+        {/* Tagline + CTA */}
+        <Reveal
+          delay={0.25}
+          className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
         >
-        <img
-            src="/profile.jpg"
-            alt="Profile"
-            className="w-full h-full object-cover"
-        />
-        </motion.div>
+          <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
+            {profile.tagline}
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <PillButton href={`https://wa.me/${contact.whatsapp}`} external>
+              {contact.cta}
+            </PillButton>
+            <PillButton variant="outline" onClick={() => scrollToId("works")}>
+              Lihat Karya
+            </PillButton>
+          </div>
+        </Reveal>
+      </div>
 
-      {/* Text content with stagger animation */}
+      {/* Foto stiker berserakan */}
       <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.2 } },
-        }}
-        className="text-center"
+        {...float(7, 14)}
+        className="pointer-events-none absolute right-6 top-24 hidden w-36 -rotate-6 md:block lg:right-16 lg:w-44"
+        style={{ zIndex: 5 }}
       >
-        <motion.h1
-          variants={{
-            hidden: { y: 20, opacity: 0 },
-            visible: { y: 0, opacity: 1 },
-          }}
-          className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 relative"
-        >
-          Hi, I'm <span className="relative">
-            Frientia
-            <motion.span
-              animate={{ scaleX: [0, 1] }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="absolute left-0 bottom-0 w-full h-1 bg-purple-500 origin-left"
-            />
-          </span> 👋
-        </motion.h1>
-        <motion.p
-          variants={{
-            hidden: { y: 20, opacity: 0 },
-            visible: { y: 0, opacity: 1 },
-          }}
-          className="text-gray-300 text-sm md:text-base max-w-xs mx-auto"
-        >
-          Web Developer crafting smooth, modern, and interactive user experiences.
-        </motion.p>
-
-        {/* Scroll down button */}
-        <motion.a
-            href="#about"
-            animate={{ y: [0, 10, 0] }} // hanya gerakan vertikal
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="mt-6 inline-block p-3 border-2 border-purple-500 rounded-full hover:bg-purple-500 hover:text-white transition"
-            >
-            ↓
-        </motion.a>
+        <div className="rounded-[1.4rem] border border-white/70 bg-card p-2.5"
+          style={{ boxShadow: "var(--shadow-lift)" }}>
+          <img
+            src={profile.photo}
+            alt=""
+            aria-hidden
+            className="h-40 w-full rounded-[1rem] object-cover lg:h-52"
+          />
+          <p className="font-mono-label px-1 pb-1 pt-2 text-center text-ink-soft">
+            that's me 👋
+          </p>
+        </div>
       </motion.div>
+
+      <motion.div
+        {...float(8, 10, 0.6)}
+        className="pointer-events-none absolute bottom-40 left-4 hidden w-24 rotate-6 lg:block lg:w-28"
+        style={{ zIndex: 5 }}
+      >
+        <div className="rounded-[1.2rem] border border-white/70 bg-card p-2"
+          style={{ boxShadow: "var(--shadow-soft)" }}>
+          <div className="grid h-20 place-items-center rounded-[0.9rem] bg-mint text-3xl lg:h-24">
+            💻
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Scroll cue */}
+      <motion.button
+        type="button"
+        onClick={() => scrollToId("about")}
+        aria-label="Gulir ke bawah"
+        {...(reduced
+          ? {}
+          : {
+              animate: { y: [0, 8, 0] },
+              transition: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
+            })}
+        className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 text-ink-soft transition-colors hover:text-accent md:block"
+      >
+        <ArrowDown size={22} />
+      </motion.button>
+
+      {/* Marquee ticker */}
+      <div className="relative mt-10 border-y border-ink/10 bg-card/60 py-3">
+        <Marquee
+          items={marquee.hero}
+          separator={marquee.separator}
+          duration={32}
+          itemClassName="font-display text-lg uppercase text-ink md:text-2xl"
+        />
+      </div>
     </section>
   );
 }
