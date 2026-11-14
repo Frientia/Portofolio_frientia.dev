@@ -6,6 +6,8 @@ import SelectedWorks from "../components/SelectedWorks";
 import Process from "../components/Process";
 import Testimonials from "../components/Testimonials";
 import Faq from "../components/Faq";
+import ContactCTA from "../components/ContactCTA";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <Process />
       <Testimonials />
       <Faq />
+      <ContactCTA />
+      <Footer />
     </main>
   );
 }

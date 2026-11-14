@@ -97,7 +97,7 @@ export default function Hero() {
             className="h-40 w-full rounded-[1rem] object-cover lg:h-52"
           />
           <p className="font-mono-label px-1 pb-1 pt-2 text-center text-ink-soft">
-            that's me 👋
+            that&apos;s me 👋
           </p>
         </div>
       </motion.div>
