@@ -1,27 +1,18 @@
-// ============================================================================
-//  PUSAT KONTEN — semua teks/data website dibaca dari sini.
-//  Jangan hardcode teks di komponen. Tandai bagian yang ingin kamu ubah: // EDIT
-// ============================================================================
-
 export const profile = {
   name: "Muhamad Yajid Rizky",
-  wordmark: "Frientia", // EDIT: inisial/wordmark di header
+  wordmark: "Frientia",
   initials: "FR",
   role: "Web Developer",
-  // EDIT: headline raksasa di hero (tiap baris = 1 elemen array)
   headline: ["MUHAMAD", "YAJID RIZKY"],
-  kicker: "Web Developer · Tangerang, Indonesia", // EDIT
+  kicker: "Web Developer · Tangerang, Indonesia",
   tagline:
     "I design and build for the web — backend-minded, currently growing into full-stack.",
   photo: "/profile.jpg",
-  availability: "Available for freelance & full-time", // EDIT
+  availability: "Available for freelance & full-time",
   localTimezone: "Asia/Jakarta",
   localTimeLabel: "WIB",
 };
 
-// ---------------------------------------------------------------------------
-//  Navigasi header — tautan ke tiap section
-// ---------------------------------------------------------------------------
 export const nav = [
   { label: "About", id: "about" },
   { label: "Jalur", id: "journey" },
@@ -33,9 +24,6 @@ export const nav = [
   { label: "Kontak", id: "contact" },
 ];
 
-// ---------------------------------------------------------------------------
-//  Marquee / ticker — kata berulang dipisah simbol •
-// ---------------------------------------------------------------------------
 export const marquee = {
   hero: [
     "Web Developer",
@@ -45,37 +33,26 @@ export const marquee = {
     "Full-stack in progress",
     "Open to work",
   ],
-  // EDIT: ticker penutup di footer
   footer: ["Let's Talk", "Open to work", "Frientia", "Terima kasih"],
   separator: "•",
 };
 
-// ---------------------------------------------------------------------------
-//  About — Fig. 01
-// ---------------------------------------------------------------------------
 export const about = {
   fig: "Fig. 01",
   figTitle: "About me",
-  // EDIT: pernyataan diri (boleh beberapa paragraf)
   statement: [
     "Lulusan baru Rekayasa Perangkat Lunak yang siap membawa energi positif ke dunia profesional.",
     "Backend-minded dengan fondasi PHP & MySQL, kini tumbuh menuju full-stack — satu commit dalam satu waktu.",
   ],
-  // EDIT: 3 chip trait pendek
   traits: ["Backend-minded", "Detail-oriented", "Always learning"],
   photo: "/profile.jpg",
-  photoCaption: "Tangerang, Indonesia", // EDIT
+  photoCaption: "Tangerang, Indonesia",
 };
 
-// ---------------------------------------------------------------------------
-//  JALUR (animasi utama) — pemberhentian = superpower/keahlian
-//  Tiap stop: judul 2 kata KAPITAL (kata ke-2 diselipkan badge),
-//  badge (ikon lucide), balon deskripsi, dan tint pastel.
-// ---------------------------------------------------------------------------
 export const journey = {
   fig: "Fig. 02",
   figTitle: "The path",
-  heading: ["WHAT I", "BRING"], // EDIT
+  heading: ["WHAT I", "BRING"],
   intro:
     "Ikuti garisnya — tiap pemberhentian adalah satu keahlian inti yang kupakai dari awal sampai sebuah proyek rilis.",
   stops: [
@@ -83,7 +60,7 @@ export const journey = {
       id: "php",
       word1: "SERVER",
       word2: "SIDE",
-      icon: "Server", // nama ikon lucide-react
+      icon: "Server",
       bubble:
         "Fondasi utamaku. Dari autentikasi sampai logika bisnis, sebagian besar proyekku dibangun dengan PHP.",
       tint: "peach",
@@ -132,14 +109,10 @@ export const journey = {
   ],
 };
 
-// ---------------------------------------------------------------------------
-//  SELECTED WORKS — kartu bertumpuk + counter + meta
-//  role/status/year adalah placeholder editable.
-// ---------------------------------------------------------------------------
 export const works = {
   fig: "Fig. 03",
   figTitle: "Selected work",
-  heading: ["THINGS", "I BUILT"], // EDIT
+  heading: ["THINGS", "I BUILT"],
   intro: "Beberapa repo yang paling mewakili perjalananku sejauh ini.",
   items: [
     {
@@ -148,9 +121,9 @@ export const works = {
       description: "A simple attendance management system built with PHP and MySQL.",
       link: "https://github.com/Frientia/sistem_absensi",
       image: "/project.jpg",
-      role: "Full-stack", // EDIT
-      status: "Completed", // EDIT
-      year: "2025", // EDIT
+      role: "Full-stack",
+      status: "Completed",
+      year: "2025",
       stack: ["PHP", "MySQL"],
       tint: "pink",
     },
@@ -160,9 +133,9 @@ export const works = {
       description: "An e-commerce platform using PHP and MySQL for a competency exam.",
       link: "https://github.com/Frientia/ukk_klaster3",
       image: "/project.jpg",
-      role: "Backend", // EDIT
-      status: "Completed", // EDIT
-      year: "2025", // EDIT
+      role: "Backend",
+      status: "Completed",
+      year: "2025",
       stack: ["PHP", "MySQL"],
       tint: "peach",
     },
@@ -172,9 +145,9 @@ export const works = {
       description: "Campus website display project using Blade templating.",
       link: "https://github.com/Frientia/display_website_kampus",
       image: "/project.jpg",
-      role: "Frontend", // EDIT
-      status: "Completed", // EDIT
-      year: "2025", // EDIT
+      role: "Frontend",
+      status: "Completed",
+      year: "2025",
       stack: ["Laravel", "Blade"],
       tint: "mint",
     },
@@ -184,9 +157,9 @@ export const works = {
       description: "Simple car rental website — clean flow from browse to booking.",
       link: "https://github.com/Frientia/sewa_mobil",
       image: "/project.jpg",
-      role: "Full-stack", // EDIT
-      status: "Completed", // EDIT
-      year: "2024", // EDIT
+      role: "Full-stack",
+      status: "Completed",
+      year: "2024",
       stack: ["PHP", "MySQL"],
       tint: "lilac",
     },
@@ -196,22 +169,19 @@ export const works = {
       description: "Repository for practicing JavaScript concepts, in public.",
       link: "https://github.com/Frientia/learning_javascript",
       image: "/project.jpg",
-      role: "Learning", // EDIT
-      status: "Ongoing", // EDIT
-      year: "2026", // EDIT
+      role: "Learning",
+      status: "Ongoing",
+      year: "2026",
       stack: ["JavaScript"],
       tint: "sky",
     },
   ],
 };
 
-// ---------------------------------------------------------------------------
-//  PROSES 01–04 — panel sticky + tab file. Placeholder editable.
-// ---------------------------------------------------------------------------
 export const process = {
   fig: "Fig. 04",
   figTitle: "How I work",
-  heading: ["FROM BRIEF", "TO LIVE"], // EDIT
+  heading: ["FROM BRIEF", "TO LIVE"],
   steps: [
     {
       no: "01",
@@ -221,7 +191,6 @@ export const process = {
         name: "brief.txt",
         kind: "text",
         tint: "pink",
-        // EDIT: isi preview file
         preview: [
           "PROJECT : Portfolio Revamp",
           "CLIENT  : Personal",
@@ -251,7 +220,6 @@ export const process = {
         name: "app.php",
         kind: "code",
         tint: "mint",
-        // EDIT: isi preview file
         preview: [
           "<?php",
           "// endpoint sederhana, siap pakai",
@@ -271,7 +239,6 @@ export const process = {
         name: "report.xlsx",
         kind: "sheet",
         tint: "butter",
-        // EDIT: isi preview (baris tabel)
         preview: [
           ["Metric", "Target", "Hasil"],
           ["Lighthouse", "95+", "98"],
@@ -283,14 +250,10 @@ export const process = {
   ],
 };
 
-// ---------------------------------------------------------------------------
-//  RESUME / CV — teks diambil dari CV asli. Hanya pengalaman RELEVAN.
-//  Foto CV sengaja TIDAK dipakai. File PDF untuk tombol unduh: resume.cvFile
-// ---------------------------------------------------------------------------
 export const resume = {
   fig: "Fig. 05",
   figTitle: "Resume",
-  heading: ["ON", "PAPER"], // EDIT
+  heading: ["ON", "PAPER"],
   intro:
     "Ringkasan latar belakang, pengalaman relevan, dan kemampuan — versi lengkapnya bisa diunduh sebagai PDF.",
   cvFile: "/CV-Muhamad-Yajid-Rizky.pdf",
@@ -332,14 +295,10 @@ export const resume = {
   ],
 };
 
-// ---------------------------------------------------------------------------
-//  TESTIMONI — placeholder editable (ganti dengan testimoni asli)
-// ---------------------------------------------------------------------------
 export const testimonials = {
   fig: "Fig. 06",
   figTitle: "Kind words",
-  heading: ["PEOPLE", "SAY"], // EDIT
-  // EDIT: ganti dengan testimoni asli. avatar boleh pakai /profile.jpg dulu.
+  heading: ["PEOPLE", "SAY"],
   items: [
     {
       name: "Nama Klien",
@@ -368,13 +327,10 @@ export const testimonials = {
   ],
 };
 
-// ---------------------------------------------------------------------------
-//  FAQ — placeholder editable
-// ---------------------------------------------------------------------------
 export const faq = {
   fig: "Fig. 07",
   figTitle: "Questions",
-  heading: ["ASK ME", "ANYTHING"], // EDIT
+  heading: ["ASK ME", "ANYTHING"],
   items: [
     {
       q: "Teknologi apa yang paling sering kamu pakai?",
@@ -399,20 +355,16 @@ export const faq = {
   ],
 };
 
-// ---------------------------------------------------------------------------
-//  KONTAK
-// ---------------------------------------------------------------------------
 export const contact = {
   fig: "Fig. 08",
   figTitle: "Contact",
-  heading: ["LET'S BUILD", "SOMETHING", "GOOD"], // EDIT
+  heading: ["LET'S BUILD", "SOMETHING", "GOOD"],
   statement:
     "Punya proyek, ide, atau cuma mau ngobrol soal web? Aku senang dengar darimu.",
   cta: "Let's Talk",
   email: "muhamadyajidrizky@gmail.com",
   phone: "+62 851-7981-3835",
   phoneRaw: "+6285179813835",
-  // EDIT: nomor WhatsApp (format internasional tanpa +, tanpa spasi)
   whatsapp: "6285179813835",
   location: "Indonesia",
   socials: [
@@ -443,3 +395,4 @@ export const footer = {
   note: "Next.js · Tailwind · Motion · Lenis",
   year: new Date().getFullYear(),
 };
+

@@ -4,10 +4,6 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { useReducedMotion } from "framer-motion";
 
-/**
- * Lenis smooth scroll global. Dinonaktifkan otomatis saat user memilih
- * prefers-reduced-motion. Mengintegrasikan Lenis dengan requestAnimationFrame.
- */
 export default function SmoothScroll() {
   const reduced = useReducedMotion();
 
@@ -29,7 +25,6 @@ export default function SmoothScroll() {
     }
     rafId = requestAnimationFrame(raf);
 
-    // Ekspos Lenis agar anchor & komponen lain bisa scrollTo dengan mulus.
     window.lenis = lenis;
 
     return () => {
@@ -41,3 +36,4 @@ export default function SmoothScroll() {
 
   return null;
 }
+

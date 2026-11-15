@@ -29,7 +29,6 @@ export default function SelectedWorks() {
 
   return (
     <section id="works" className="relative scroll-mt-24">
-      {/* Header section + counter sticky */}
       <div className="mx-auto w-full max-w-6xl px-5 pt-24 md:pt-32">
         <Reveal className="mb-6">
           <FigLabel fig={works.fig} title={works.figTitle} />
@@ -42,7 +41,6 @@ export default function SelectedWorks() {
         </div>
       </div>
 
-      {/* Counter sticky */}
       <div className="sticky top-24 z-30 mx-auto mt-8 flex w-full max-w-6xl items-center justify-between px-5">
         <span className="font-mono-label rounded-full border border-ink/10 bg-card/90 px-4 py-2 text-ink backdrop-blur">
           {String(active + 1).padStart(2, "0")}
@@ -53,7 +51,6 @@ export default function SelectedWorks() {
         </span>
       </div>
 
-      {/* Tumpukan kartu */}
       <div ref={stackRef} className="relative mx-auto mt-6 max-w-5xl px-5 pb-24 md:pb-32">
         {items.map((item, i) => {
           const tint = TINTS[item.tint] || TINTS.pink;
@@ -71,7 +68,6 @@ export default function SelectedWorks() {
                 className="card-lift group grid overflow-hidden rounded-[1.8rem] border border-ink/10 bg-card md:grid-cols-2"
                 style={{ boxShadow: "var(--shadow-lift)" }}
               >
-                {/* Gambar */}
                 <a
                   href={item.link}
                   target="_blank"
@@ -89,7 +85,6 @@ export default function SelectedWorks() {
                   </span>
                 </a>
 
-                {/* Konten */}
                 <div className="flex flex-col justify-between gap-6 p-6 md:p-9">
                   <div>
                     <h3 className="font-display text-2xl uppercase leading-tight text-ink md:text-4xl">
@@ -99,7 +94,6 @@ export default function SelectedWorks() {
                       {item.description}
                     </p>
 
-                    {/* Meta Role/Status/Year */}
                     <dl className="mt-6 grid grid-cols-3 gap-3 border-t border-ink/10 pt-5">
                       {[
                         ["Role", item.role],
@@ -113,7 +107,6 @@ export default function SelectedWorks() {
                       ))}
                     </dl>
 
-                    {/* Stack chips */}
                     <div className="mt-5 flex flex-wrap gap-2">
                       {item.stack.map((s) => (
                         <span
@@ -140,3 +133,4 @@ export default function SelectedWorks() {
     </section>
   );
 }
+

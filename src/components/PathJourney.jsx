@@ -11,7 +11,6 @@ import { journey } from "../lib/content";
 import { MaskHeading, Reveal } from "./ui/Reveal";
 import { FigLabel, StickerBadge, SpeechBubble, ICONS } from "./ui/Bits";
 
-/** Ubah titik-titik (viewBox 0..100) jadi path bezier halus (Catmull-Rom). */
 function catmullRomPath(pts) {
   let d = `M ${pts[0][0]} ${pts[0][1]}`;
   for (let i = 0; i < pts.length - 1; i++) {
@@ -30,7 +29,6 @@ function catmullRomPath(pts) {
   return d;
 }
 
-// Jalur desktop: meliuk ke arah tiap kartu (kiri 30 / kanan 70), bleed di ujung.
 const N = journey.stops.length;
 const desktopPts = [[50, -3]];
 journey.stops.forEach((_, i) => {
@@ -41,7 +39,6 @@ journey.stops.forEach((_, i) => {
 desktopPts.push([50, 103]);
 const DESKTOP_D = catmullRomPath(desktopPts);
 
-/** Satu pemberhentian: fade+scale masuk saat garis (progress) mencapainya. */
 function PathStop({ stop, index, progress, alignRight }) {
   const reduced = useReducedMotion();
   const c = (index + 0.5) / N;
@@ -69,7 +66,6 @@ function PathStop({ stop, index, progress, alignRight }) {
           className="rounded-[1.8rem] border border-ink/10 bg-card/85 p-6 backdrop-blur-sm md:p-8"
           style={{ boxShadow: "var(--shadow-soft)" }}
         >
-          {/* Judul raksasa 2 kata + badge menyelip */}
           <div
             className={`flex flex-wrap items-center gap-x-3 gap-y-2 ${
               alignRight ? "md:justify-end" : ""
@@ -89,7 +85,6 @@ function PathStop({ stop, index, progress, alignRight }) {
             </span>
           </div>
 
-          {/* Label mono */}
           <p
             className={`font-mono-label mt-4 text-ink-soft ${
               alignRight ? "md:text-right" : ""
@@ -98,7 +93,6 @@ function PathStop({ stop, index, progress, alignRight }) {
             {String(index + 1).padStart(2, "0")} · {stop.label}
           </p>
 
-          {/* Balon ucapan */}
           <SpeechBubble
             rotate={rotate}
             className={`mt-5 max-w-md ${alignRight ? "md:ml-auto" : ""}`}
@@ -125,7 +119,6 @@ export default function PathJourney() {
 
   return (
     <section id="journey" className="relative scroll-mt-24">
-      {/* Intro */}
       <div className="mx-auto w-full max-w-6xl px-5 pt-24 md:pt-32">
         <Reveal className="mb-6">
           <FigLabel fig={journey.fig} title={journey.figTitle} />
@@ -142,16 +135,13 @@ export default function PathJourney() {
         </Reveal>
       </div>
 
-      {/* Area jalur */}
       <div ref={stopsRef} className="relative mx-auto w-full max-w-6xl px-5 pb-24 md:pb-32">
-        {/* Jalur desktop (meliuk) */}
         <svg
           className="pointer-events-none absolute inset-0 hidden h-full w-full md:block"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          {/* ghost route */}
           <path
             d={DESKTOP_D}
             fill="none"
@@ -160,7 +150,6 @@ export default function PathJourney() {
             strokeLinecap="round"
             vectorEffect="non-scaling-stroke"
           />
-          {/* drawn accent */}
           <motion.path
             d={DESKTOP_D}
             fill="none"
@@ -173,7 +162,6 @@ export default function PathJourney() {
           />
         </svg>
 
-        {/* Timeline mobile (garis vertikal tetap tergambar) */}
         <div className="absolute bottom-6 left-[26px] top-6 w-[3px] md:hidden" aria-hidden="true">
           <div className="absolute inset-0 rounded-full bg-ink/10" />
           <motion.div
@@ -182,7 +170,6 @@ export default function PathJourney() {
           />
         </div>
 
-        {/* Pemberhentian */}
         <div className="relative z-10">
           {journey.stops.map((stop, i) => (
             <PathStop
@@ -198,3 +185,4 @@ export default function PathJourney() {
     </section>
   );
 }
+

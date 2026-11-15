@@ -24,7 +24,6 @@ export default function About() {
       </Reveal>
 
       <div className="grid items-center gap-12 md:grid-cols-[1.15fr_0.85fr] md:gap-16">
-        {/* Kolom teks */}
         <div>
           <MaskHeading
             as="h2"
@@ -33,7 +32,6 @@ export default function About() {
             lineClassName="text-[clamp(1.4rem,3.4vw,2.6rem)] leading-[1.15] font-body font-semibold normal-case tracking-normal"
           />
 
-          {/* Chip trait */}
           <Stagger className="mt-8 flex flex-wrap gap-3" stagger={0.08}>
             {about.traits.map((t, i) => (
               <StaggerItem key={t}>
@@ -42,7 +40,6 @@ export default function About() {
             ))}
           </Stagger>
 
-          {/* Meta grid ala editorial-teknikal */}
           <Reveal delay={0.1} className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-3">
             {META.map((m) => (
               <div key={m.k} className="bg-card p-4">
@@ -53,7 +50,6 @@ export default function About() {
           </Reveal>
         </div>
 
-        {/* Kolom foto stiker miring */}
         <Reveal delay={0.1} x={30} className="relative mx-auto w-full max-w-sm">
           <motion.figure
             initial={reduced ? false : { rotate: -6, y: 20, opacity: 0 }}
@@ -74,7 +70,6 @@ export default function About() {
             </figcaption>
           </motion.figure>
 
-          {/* Badge ketersediaan */}
           <span
             className="absolute -right-2 -top-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-bg px-3 py-1.5"
             style={{ boxShadow: "var(--shadow-soft)" }}
@@ -87,3 +82,4 @@ export default function About() {
     </section>
   );
 }
+

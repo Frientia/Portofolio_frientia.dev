@@ -1,25 +1,21 @@
 @import "tailwindcss";
 
-/* ==========================================================================
-   PALET GELAP (HITAM + UNGU) + TOKEN TIPOGRAFI
-   ========================================================================== */
 :root {
-  --bg: #0b0a10; /* near-black bernuansa ungu */
-  --ink: #ece9f5; /* teks utama */
-  --ink-soft: #a49dbb; /* teks sekunder */
+  --bg: #0b0a10;
+  --ink: #ece9f5;
+  --ink-soft: #a49dbb;
 
-  /* Tint purple-family (gelap, subtil) — pengganti pastel */
-  --pink: #34203d; /* plum */
-  --peach: #2c2140; /* ungu */
-  --mint: #1d2740; /* indigo-slate */
-  --lilac: #2a2444; /* lavender */
-  --butter: #38294a; /* violet */
-  --sky: #1a2338; /* blue-purple */
+  --pink: #34203d;
+  --peach: #2c2140;
+  --mint: #1d2740;
+  --lilac: #2a2444;
+  --butter: #38294a;
+  --sky: #1a2338;
 
-  --accent: #a78bfa; /* violet — aksen utama & stroke path */
-  --accent-2: #7c6cf0; /* violet lebih dalam — aksen sekunder */
+  --accent: #a78bfa;
+  --accent-2: #7c6cf0;
 
-  --card: #14111d; /* permukaan kartu */
+  --card: #14111d;
   --border-soft: rgba(255, 255, 255, 0.09);
 
   --shadow-soft: 0 10px 30px -14px rgba(0, 0, 0, 0.85);
@@ -27,8 +23,6 @@
     0 24px 60px -24px rgba(0, 0, 0, 0.95);
 }
 
-/* Font utama disetel oleh next/font/local di <html> sebagai --font-brand.
-   Fallback di bawah hanya berlaku bila font gagal dimuat. */
 :root {
   --font-display-fallback: system-ui, sans-serif;
   --font-body-fallback: system-ui, sans-serif;
@@ -57,15 +51,12 @@
   --shadow-lift: var(--shadow-lift);
 }
 
-/* ==========================================================================
-   BASE
-   ========================================================================== */
 * {
   border-color: var(--border-soft);
 }
 
 html {
-  scroll-behavior: auto; /* Lenis yang atur */
+  scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
   color-scheme: dark;
 }
@@ -84,7 +75,6 @@ body {
   color: var(--bg);
 }
 
-/* Lenis */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -96,16 +86,12 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* Fokus keyboard yang jelas (aksesibilitas) */
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* ==========================================================================
-   UTILITAS TIPOGRAFI
-   ========================================================================== */
 .font-display {
   font-family: var(--font-display, var(--font-display-fallback));
   letter-spacing: -0.02em;
@@ -133,9 +119,6 @@ html.lenis body {
   font-size: clamp(2.25rem, 7vw, 5.5rem);
 }
 
-/* ==========================================================================
-   KEYFRAMES
-   ========================================================================== */
 @keyframes marquee-x {
   from {
     transform: translateX(0);
@@ -189,7 +172,6 @@ html.lenis body {
   animation-play-state: paused;
 }
 
-/* Underline sweep untuk link */
 .link-sweep {
   position: relative;
 }
@@ -210,7 +192,6 @@ html.lenis body {
   transform: scaleX(1);
 }
 
-/* Kartu terangkat saat hover */
 .card-lift {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.4s ease;
@@ -220,7 +201,6 @@ html.lenis body {
   box-shadow: var(--shadow-lift);
 }
 
-/* Line-mask reveal untuk judul besar */
 .line-mask {
   display: block;
   overflow: hidden;
@@ -230,9 +210,6 @@ html.lenis body {
   will-change: transform;
 }
 
-/* ==========================================================================
-   REDUCED MOTION — hormati preferensi sistem
-   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-marquee-reverse {
@@ -247,3 +224,4 @@ html.lenis body {
     scroll-behavior: auto !important;
   }
 }
+

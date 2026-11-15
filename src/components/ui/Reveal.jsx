@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const EASE = [0.22, 1, 0.36, 1];
 
-/** Fade + slide saat masuk viewport (sekali). Instan bila reduced-motion. */
 export function Reveal({
   children,
   delay = 0,
@@ -36,7 +35,6 @@ export function Reveal({
   );
 }
 
-/** Container yang men-stagger anak-anak <RevealItem>. */
 export function Stagger({ children, className = "", stagger = 0.1, delay = 0 }) {
   const reduced = useReducedMotion();
   if (reduced) return <div className={className}>{children}</div>;
@@ -70,17 +68,13 @@ export function StaggerItem({ children, className = "", y = 24 }) {
   );
 }
 
-/**
- * Judul besar dengan reveal line-mask (clip tiap baris naik dari bawah).
- * `lines` = array string, tiap elemen jadi satu baris bermask.
- */
 export function MaskHeading({
   lines,
   as = "h2",
   className = "",
   lineClassName = "",
   stagger = 0.09,
-  immediate = false, // true = reveal saat mount (untuk hero / above-the-fold)
+  immediate = false,
 }) {
   const reduced = useReducedMotion();
   return createElement(
@@ -105,3 +99,4 @@ export function MaskHeading({
     ))
   );
 }
+

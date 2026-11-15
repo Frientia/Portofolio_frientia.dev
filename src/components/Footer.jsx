@@ -9,7 +9,6 @@ import { ArrowUp } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="relative border-t border-ink/10 bg-card/50">
-      {/* Marquee penutup */}
       <div className="border-b border-ink/10 py-4">
         <Marquee
           items={marquee.footer}
@@ -54,3 +53,4 @@ export default function Footer() {
     </footer>
   );
 }
+

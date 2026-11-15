@@ -25,7 +25,6 @@ import {
   Briefcase,
 } from "lucide-react";
 
-/** Peta nama ikon (string di content.js) -> komponen lucide. */
 export const ICONS = {
   Server,
   Database,
@@ -50,7 +49,6 @@ export const ICONS = {
   Briefcase,
 };
 
-/** Tint purple-family: nama -> kelas bg. (Nama warna dipertahankan dari konten.) */
 export const TINTS = {
   pink: { bg: "bg-pink" },
   peach: { bg: "bg-peach" },
@@ -60,7 +58,6 @@ export const TINTS = {
   sky: { bg: "bg-sky" },
 };
 
-/** Label teknis monospace: "Fig. 01 · title". */
 export function FigLabel({ fig, title, className = "" }) {
   return (
     <span
@@ -76,7 +73,6 @@ export function FigLabel({ fig, title, className = "" }) {
   );
 }
 
-/** Chip/pill trait. */
 export function Chip({ children, tint = "pink", className = "" }) {
   const t = TINTS[tint] || TINTS.pink;
   return (
@@ -88,7 +84,6 @@ export function Chip({ children, tint = "pink", className = "" }) {
   );
 }
 
-/** Lingkaran berisi panah; berputar + bergeser saat hover pada induknya. */
 export function ArrowCircle({
   icon: Icon = ArrowUpRight,
   className = "",
@@ -105,13 +100,12 @@ export function ArrowCircle({
   );
 }
 
-/** Tombol/link pill dengan lingkaran panah. Render <a> bila ada href. */
 export function PillButton({
   children,
   href,
   external = false,
   icon = ArrowUpRight,
-  variant = "solid", // solid | outline
+  variant = "solid",
   className = "",
   onClick,
   ariaLabel,
@@ -171,7 +165,6 @@ export function PillButton({
   );
 }
 
-/** Badge stiker: kotak membulat dirotasi dengan ikon + halo pastel. */
 export function StickerBadge({
   icon: Icon = Star,
   tint = "pink",
@@ -201,7 +194,6 @@ export function StickerBadge({
   );
 }
 
-/** Balon ucapan (kartu gelap), diputar halus. */
 export function SpeechBubble({ children, rotate = 3, className = "" }) {
   return (
     <div
@@ -216,3 +208,4 @@ export function SpeechBubble({ children, rotate = 3, className = "" }) {
     </div>
   );
 }
+

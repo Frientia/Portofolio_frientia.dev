@@ -12,7 +12,6 @@ import { scrollToId } from "../lib/scroll";
 import { MaskHeading, Reveal } from "./ui/Reveal";
 import { FigLabel, TINTS } from "./ui/Bits";
 
-/** Isi preview sebuah "file" (text/code/sheet/design). */
 function FileBody({ file }) {
   const tint = TINTS[file.tint] || TINTS.pink;
 
@@ -60,7 +59,6 @@ function FileBody({ file }) {
     );
   }
 
-  // text / code
   return (
     <div className={`h-full w-full ${tint.bg} p-5`}>
       <pre className="h-full overflow-hidden font-mono text-[0.78rem] leading-relaxed">
@@ -86,7 +84,6 @@ function FileBody({ file }) {
   );
 }
 
-/** Jendela file: chrome (titik + nama file) + body. */
 function FileWindow({ file, className = "", bodyClassName = "h-56" }) {
   return (
     <div
@@ -114,7 +111,6 @@ export default function Process() {
   const [active, setActive] = useState(0);
   const stepsRef = useRef(null);
 
-  // Langkah aktif mengikuti scroll: progress container -> index.
   const { scrollYProgress } = useScroll({
     target: stepsRef,
     offset: ["start center", "end center"],
@@ -138,7 +134,6 @@ export default function Process() {
       </div>
 
       <div className="mx-auto mt-12 grid w-full max-w-6xl gap-10 px-5 pb-24 md:mt-16 md:grid-cols-2 md:gap-14 md:pb-32">
-        {/* Langkah 01–04 */}
         <div ref={stepsRef}>
           {steps.map((s, i) => {
             const isActive = active === i;
@@ -170,12 +165,10 @@ export default function Process() {
                   {s.body}
                 </p>
 
-                {/* Preview inline khusus mobile */}
                 <div className="mt-5 md:hidden">
                   <FileWindow file={s.file} bodyClassName="h-44" />
                 </div>
 
-                {/* Penanda langkah aktif (desktop) */}
                 <motion.span
                   aria-hidden
                   className={`mt-4 hidden h-1 rounded-full ${tint.bg} md:block`}
@@ -188,10 +181,8 @@ export default function Process() {
           })}
         </div>
 
-        {/* Panel sticky + tab file (desktop) */}
         <div className="hidden md:block">
           <div className="sticky top-28">
-            {/* Tab file */}
             <div className="mb-3 flex flex-wrap gap-2">
               {steps.map((s, i) => (
                 <button
@@ -228,3 +219,4 @@ export default function Process() {
     </section>
   );
 }
+

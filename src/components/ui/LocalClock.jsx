@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-/** Jam lokal live (default WIB). Render placeholder dulu agar tak hydration mismatch. */
 export default function LocalClock({
   timezone = "Asia/Jakarta",
   label = "WIB",
@@ -34,3 +33,4 @@ export default function LocalClock({
     </span>
   );
 }
+

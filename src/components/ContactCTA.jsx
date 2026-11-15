@@ -12,7 +12,6 @@ export default function ContactCTA() {
       id="contact"
       className="relative overflow-hidden scroll-mt-24"
     >
-      {/* Glow ungu subtil */}
       <div
         aria-hidden
         className="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-accent opacity-[0.10] blur-[110px]"
@@ -39,7 +38,6 @@ export default function ContactCTA() {
           </p>
         </Reveal>
 
-        {/* CTA */}
         <Reveal delay={0.2} className="mt-8 flex flex-wrap items-center gap-3">
           <PillButton href={waHref} external ariaLabel="Chat lewat WhatsApp">
             {contact.cta}
@@ -65,7 +63,6 @@ export default function ContactCTA() {
           </span>
         </Reveal>
 
-        {/* Kontak langsung */}
         <Reveal delay={0.25} className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
           <a
             className="link-sweep text-sm font-medium text-ink"
@@ -84,7 +81,6 @@ export default function ContactCTA() {
           </span>
         </Reveal>
 
-        {/* Socials */}
         <Reveal delay={0.3} className="mt-8 flex flex-wrap gap-3">
           {contact.socials.map((s) => {
             const Icon = ICONS[s.icon] || ICONS.ArrowUpRight;
@@ -111,3 +107,4 @@ export default function ContactCTA() {
     </section>
   );
 }
+

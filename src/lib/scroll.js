@@ -1,6 +1,5 @@
 "use client";
 
-/** Scroll mulus ke elemen by id, memakai Lenis bila tersedia. */
 export function scrollToId(id, offset = -20) {
   if (typeof window === "undefined") return;
   const el = document.getElementById(id);
@@ -11,3 +10,4 @@ export function scrollToId(id, offset = -20) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
+

@@ -37,7 +37,6 @@ export default function Resume() {
       </div>
 
       <div className="mx-auto mt-12 grid w-full max-w-6xl gap-12 px-5 pb-24 md:mt-16 md:grid-cols-[1.15fr_0.85fr] md:gap-14 md:pb-32">
-        {/* Kolom kiri: pengalaman + pendidikan */}
         <div>
           <Reveal className="mb-6 flex items-center gap-2">
             <Briefcase size={18} className="text-accent" aria-hidden />
@@ -81,7 +80,6 @@ export default function Resume() {
           ))}
         </div>
 
-        {/* Kolom kanan: kemampuan + sertifikat */}
         <div>
           <Reveal className="mb-6 flex items-center gap-2">
             <ICONS.Code2 size={18} className="text-accent" aria-hidden />
@@ -119,3 +117,4 @@ export default function Resume() {
     </section>
   );
 }
+

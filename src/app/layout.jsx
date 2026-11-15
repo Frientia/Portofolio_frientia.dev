@@ -2,7 +2,6 @@ import "./globals.css";
 import localFont from "next/font/local";
 import SmoothScroll from "../components/SmoothScroll";
 
-// Font pilihan user (HYWenHei) dipakai untuk SELURUH teks.
 const brand = localFont({
   src: "./fonts/zh-cn.ttf",
   variable: "--font-brand",
@@ -25,3 +24,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

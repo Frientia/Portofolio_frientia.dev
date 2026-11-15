@@ -14,7 +14,6 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const waHref = `https://wa.me/${contact.whatsapp}`;
 
-  // Scrollspy: section yang melintasi pita tengah viewport = nav aktif.
   useEffect(() => {
     const els = nav
       .map((n) => document.getElementById(n.id))
@@ -52,7 +51,6 @@ export default function Header() {
           className="mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-2xl border border-ink/10 bg-bg/70 py-2 pl-3 pr-2 backdrop-blur-xl md:rounded-full md:pl-4 md:pr-3"
           style={{ boxShadow: "var(--shadow-soft)" }}
         >
-          {/* Wordmark */}
           <button
             type="button"
             onClick={() => go("hero")}
@@ -72,7 +70,6 @@ export default function Header() {
             </span>
           </button>
 
-          {/* Nav desktop */}
           <nav aria-label="Navigasi utama" className="hidden items-center gap-1 lg:flex">
             {nav.map((item) => {
               const isActive = active === item.id;
@@ -92,7 +89,6 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Aksi kanan */}
           <div className="flex shrink-0 items-center gap-2 md:gap-3">
             <span className="hidden items-center gap-2 rounded-full border border-ink/10 bg-card px-3 py-1.5 xl:inline-flex">
               <span className="relative flex h-2 w-2" aria-hidden>
@@ -115,7 +111,6 @@ export default function Header() {
               {contact.cta}
             </PillButton>
 
-            {/* Hamburger (mobile/tablet) */}
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
@@ -130,7 +125,6 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {/* Menu mobile */}
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
@@ -179,3 +173,4 @@ export default function Header() {
     </>
   );
 }
+

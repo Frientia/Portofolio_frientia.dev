@@ -2,10 +2,6 @@
 
 import { useReducedMotion } from "framer-motion";
 
-/**
- * Ticker/marquee infinite horizontal. Isi diduplikasi 2x agar loop mulus
- * (translateX 0 -> -50%). Berhenti saat prefers-reduced-motion.
- */
 export default function Marquee({
   items = [],
   separator = "•",
@@ -44,3 +40,4 @@ export default function Marquee({
     </div>
   );
 }
+
