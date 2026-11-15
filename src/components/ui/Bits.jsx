@@ -19,6 +19,10 @@ import {
   FileText,
   Sheet,
   Star,
+  Download,
+  Award,
+  GraduationCap,
+  Briefcase,
 } from "lucide-react";
 
 /** Peta nama ikon (string di content.js) -> komponen lucide. */
@@ -40,6 +44,10 @@ export const ICONS = {
   FileText,
   Sheet,
   Star,
+  Download,
+  Award,
+  GraduationCap,
+  Briefcase,
 };
 
 /** Tint purple-family: nama -> kelas bg. (Nama warna dipertahankan dari konten.) */
@@ -107,6 +115,7 @@ export function PillButton({
   className = "",
   onClick,
   ariaLabel,
+  download = false,
 }) {
   const reduced = useReducedMotion();
   const base =
@@ -137,6 +146,7 @@ export function PillButton({
         aria-label={ariaLabel}
         target={external ? "_blank" : undefined}
         rel={external ? "noopener noreferrer" : undefined}
+        download={download ? true : undefined}
         className={`${base} ${skin} ${className}`}
         whileHover={whileHover}
         whileTap={whileTap}

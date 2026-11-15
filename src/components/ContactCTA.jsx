@@ -1,6 +1,6 @@
 "use client";
 
-import { contact, profile } from "../lib/content";
+import { contact, profile, resume } from "../lib/content";
 import { MaskHeading, Reveal } from "./ui/Reveal";
 import { FigLabel, PillButton, ICONS } from "./ui/Bits";
 
@@ -46,6 +46,15 @@ export default function ContactCTA() {
           </PillButton>
           <PillButton href={`mailto:${contact.email}`} variant="outline" icon={ICONS.Mail}>
             Email
+          </PillButton>
+          <PillButton
+            href={resume.cvFile}
+            download
+            variant="outline"
+            icon={ICONS.Download}
+            ariaLabel="Unduh CV dalam format PDF"
+          >
+            Unduh CV
           </PillButton>
           <span className="font-mono-label ml-1 inline-flex items-center gap-2 text-ink-soft">
             <span className="relative flex h-2 w-2" aria-hidden>

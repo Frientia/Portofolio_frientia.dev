@@ -4,6 +4,7 @@ import About from "../components/About";
 import PathJourney from "../components/PathJourney";
 import SelectedWorks from "../components/SelectedWorks";
 import Process from "../components/Process";
+import Resume from "../components/Resume";
 import Testimonials from "../components/Testimonials";
 import Faq from "../components/Faq";
 import ContactCTA from "../components/ContactCTA";
@@ -18,6 +19,7 @@ export default function Home() {
       <PathJourney />
       <SelectedWorks />
       <Process />
+      <Resume />
       <Testimonials />
       <Faq />
       <ContactCTA />

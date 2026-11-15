@@ -27,6 +27,7 @@ export const nav = [
   { label: "Jalur", id: "journey" },
   { label: "Karya", id: "works" },
   { label: "Proses", id: "process" },
+  { label: "Resume", id: "resume" },
   { label: "Testimoni", id: "testimonials" },
   { label: "FAQ", id: "faq" },
   { label: "Kontak", id: "contact" },
@@ -57,8 +58,8 @@ export const about = {
   figTitle: "About me",
   // EDIT: pernyataan diri (boleh beberapa paragraf)
   statement: [
-    "I'm an aspiring backend developer with a strong foundation in PHP and MySQL.",
-    "Currently learning JavaScript, Git, and GitHub to move towards full-stack development — one commit at a time.",
+    "Lulusan baru Rekayasa Perangkat Lunak yang siap membawa energi positif ke dunia profesional.",
+    "Backend-minded dengan fondasi PHP & MySQL, kini tumbuh menuju full-stack — satu commit dalam satu waktu.",
   ],
   // EDIT: 3 chip trait pendek
   traits: ["Backend-minded", "Detail-oriented", "Always learning"],
@@ -283,10 +284,59 @@ export const process = {
 };
 
 // ---------------------------------------------------------------------------
+//  RESUME / CV — teks diambil dari CV asli. Hanya pengalaman RELEVAN.
+//  Foto CV sengaja TIDAK dipakai. File PDF untuk tombol unduh: resume.cvFile
+// ---------------------------------------------------------------------------
+export const resume = {
+  fig: "Fig. 05",
+  figTitle: "Resume",
+  heading: ["ON", "PAPER"], // EDIT
+  intro:
+    "Ringkasan latar belakang, pengalaman relevan, dan kemampuan — versi lengkapnya bisa diunduh sebagai PDF.",
+  cvFile: "/CV-Muhamad-Yajid-Rizky.pdf",
+  cvLabel: "Unduh CV (PDF)",
+  about:
+    "Lulusan baru yang penuh semangat dengan latar belakang pendidikan Informasi Teknologi; memahami fondasi pemrograman dan keterampilan praktis untuk berkembang di dunia kerja.",
+  experience: [
+    {
+      period: "2024 – 2025",
+      role: "Project Manager — Website Display Kampus",
+      org: "Proyek UAS · PHP, Laravel & MySQL",
+      points: [
+        "Memimpin tim pengembangan frontend, backend, database, dan infrastruktur.",
+        "Merancang timeline, pembagian tugas, dan dokumentasi proyek.",
+        "Mengatur komunikasi tim dan memastikan pengerjaan sesuai deadline.",
+      ],
+    },
+  ],
+  education: [
+    {
+      period: "2019 – 2022",
+      title: "Rekayasa Perangkat Lunak",
+      org: "SMKN 5 Kabupaten Tangerang",
+      note: "Fokus pada pemrograman, pengelolaan database, dan pengenalan berbagai bahasa pemrograman.",
+    },
+  ],
+  certificates: [
+    "AWS Certificate — Dicoding",
+    "Sertifikat Kompetensi Rekayasa Perangkat Lunak — BNSP",
+    "Sertifikat Prakerin — SMKN 5 Kabupaten Tangerang",
+  ],
+  skills: [
+    ["Bahasa", "PHP (intermediate) · JavaScript (intermediate) · HTML · CSS"],
+    ["Database", "MySQL"],
+    ["Tools", "XAMPP · Laragon · VS Code · phpMyAdmin · Microsoft Office"],
+    ["Version Control", "Git (intermediate)"],
+    ["Konsep", "CRUD · RESTful API (basic) · OOP (basic) · SDLC"],
+    ["Soft skill", "Beradaptasi · Komunikatif · Problem Solving · Cekatan"],
+  ],
+};
+
+// ---------------------------------------------------------------------------
 //  TESTIMONI — placeholder editable (ganti dengan testimoni asli)
 // ---------------------------------------------------------------------------
 export const testimonials = {
-  fig: "Fig. 05",
+  fig: "Fig. 06",
   figTitle: "Kind words",
   heading: ["PEOPLE", "SAY"], // EDIT
   // EDIT: ganti dengan testimoni asli. avatar boleh pakai /profile.jpg dulu.
@@ -322,7 +372,7 @@ export const testimonials = {
 //  FAQ — placeholder editable
 // ---------------------------------------------------------------------------
 export const faq = {
-  fig: "Fig. 06",
+  fig: "Fig. 07",
   figTitle: "Questions",
   heading: ["ASK ME", "ANYTHING"], // EDIT
   items: [
@@ -353,17 +403,17 @@ export const faq = {
 //  KONTAK
 // ---------------------------------------------------------------------------
 export const contact = {
-  fig: "Fig. 07",
+  fig: "Fig. 08",
   figTitle: "Contact",
   heading: ["LET'S BUILD", "SOMETHING", "GOOD"], // EDIT
   statement:
     "Punya proyek, ide, atau cuma mau ngobrol soal web? Aku senang dengar darimu.",
   cta: "Let's Talk",
   email: "muhamadyajidrizky@gmail.com",
-  phone: "+62 812-3456-7890",
-  phoneRaw: "+6281234567890",
+  phone: "+62 851-7981-3835",
+  phoneRaw: "+6285179813835",
   // EDIT: nomor WhatsApp (format internasional tanpa +, tanpa spasi)
-  whatsapp: "6281234567890",
+  whatsapp: "6285179813835",
   location: "Indonesia",
   socials: [
     { label: "Email", href: "mailto:muhamadyajidrizky@gmail.com", icon: "Mail" },
@@ -381,7 +431,7 @@ export const contact = {
     },
     {
       label: "WhatsApp",
-      href: "https://wa.me/6281234567890",
+      href: "https://wa.me/6285179813835",
       icon: "MessageCircle",
       external: true,
     },

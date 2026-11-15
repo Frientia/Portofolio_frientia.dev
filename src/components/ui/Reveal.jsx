@@ -14,18 +14,16 @@ export function Reveal({
   scale = 1,
   className = "",
   once = true,
+  as = "div",
   ...rest
 }) {
   const reduced = useReducedMotion();
+  const Comp = motion[as] || motion.div;
   if (reduced) {
-    return (
-      <div className={className} {...rest}>
-        {children}
-      </div>
-    );
+    return createElement(as, { className, ...rest }, children);
   }
   return (
-    <motion.div
+    <Comp
       className={className}
       initial={{ opacity: 0, y, x, scale }}
       whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
@@ -34,7 +32,7 @@ export function Reveal({
       {...rest}
     >
       {children}
-    </motion.div>
+    </Comp>
   );
 }
 
