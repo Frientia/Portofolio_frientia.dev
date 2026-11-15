@@ -10,7 +10,7 @@ export const profile = {
   role: "Web Developer",
   // EDIT: headline raksasa di hero (tiap baris = 1 elemen array)
   headline: ["MUHAMAD", "YAJID RIZKY"],
-  kicker: "Web Developer · Bandung, Indonesia", // EDIT
+  kicker: "Web Developer · Tangerang, Indonesia", // EDIT
   tagline:
     "I design and build for the web — backend-minded, currently growing into full-stack.",
   photo: "/profile.jpg",
@@ -64,7 +64,7 @@ export const about = {
   // EDIT: 3 chip trait pendek
   traits: ["Backend-minded", "Detail-oriented", "Always learning"],
   photo: "/profile.jpg",
-  photoCaption: "Bandung, Indonesia", // EDIT
+  photoCaption: "Tangerang, Indonesia", // EDIT
 };
 
 // ---------------------------------------------------------------------------
