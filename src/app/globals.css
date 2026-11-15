@@ -27,12 +27,12 @@
     0 24px 60px -24px rgba(0, 0, 0, 0.95);
 }
 
-/* Font --font-display / --font-body / --font-mono disetel oleh next/font di <html>.
-   Fallback di bawah hanya berlaku bila next/font gagal memuat. */
+/* Font utama disetel oleh next/font/local di <html> sebagai --font-brand.
+   Fallback di bawah hanya berlaku bila font gagal dimuat. */
 :root {
-  --font-display-fallback: "Archivo Black", system-ui, sans-serif;
-  --font-body-fallback: "Bricolage Grotesque", system-ui, sans-serif;
-  --font-mono-fallback: "JetBrains Mono", ui-monospace, monospace;
+  --font-display-fallback: system-ui, sans-serif;
+  --font-body-fallback: system-ui, sans-serif;
+  --font-mono-fallback: system-ui, sans-serif;
 }
 
 @theme inline {
@@ -49,9 +49,9 @@
   --color-accent2: var(--accent-2);
   --color-card: var(--card);
 
-  --font-display: var(--font-display, var(--font-display-fallback));
-  --font-body: var(--font-body, var(--font-body-fallback));
-  --font-mono: var(--font-mono, var(--font-mono-fallback));
+  --font-display: var(--font-brand, var(--font-display-fallback));
+  --font-body: var(--font-brand, var(--font-body-fallback));
+  --font-mono: var(--font-brand, var(--font-mono-fallback));
 
   --shadow-soft: var(--shadow-soft);
   --shadow-lift: var(--shadow-lift);

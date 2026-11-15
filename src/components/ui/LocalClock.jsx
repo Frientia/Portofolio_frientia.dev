@@ -25,7 +25,11 @@ export default function LocalClock({
   }, [timezone]);
 
   return (
-    <span className={className} suppressHydrationWarning>
+    <span
+      className={className}
+      style={{ fontVariantNumeric: "tabular-nums" }}
+      suppressHydrationWarning
+    >
       {time || "--:--:--"} {label}
     </span>
   );

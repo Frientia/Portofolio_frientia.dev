@@ -1,25 +1,11 @@
 import "./globals.css";
-import { Archivo_Black, Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import SmoothScroll from "../components/SmoothScroll";
 
-const display = Archivo_Black({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const body = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "700"],
+// Font pilihan user (HYWenHei) dipakai untuk SELURUH teks.
+const brand = localFont({
+  src: "./fonts/zh-cn.ttf",
+  variable: "--font-brand",
   display: "swap",
 });
 
@@ -31,10 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="id"
-      className={`${display.variable} ${body.variable} ${mono.variable}`}
-    >
+    <html lang="id" className={brand.variable}>
       <body className="bg-bg text-ink antialiased min-h-screen">
         <SmoothScroll />
         {children}

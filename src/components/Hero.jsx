@@ -93,23 +93,26 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-      </div>
 
-      {/* Scroll cue */}
-      <motion.button
-        type="button"
-        onClick={() => scrollToId("about")}
-        aria-label="Gulir ke bawah"
-        {...(reduced
-          ? {}
-          : {
-              animate: { y: [0, 8, 0] },
-              transition: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
-            })}
-        className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 text-ink-soft transition-colors hover:text-accent md:block"
-      >
-        <ArrowDown size={22} />
-      </motion.button>
+        {/* Scroll cue in-flow: tampil di semua breakpoint, tidak menimpa CTA */}
+        <div className="mt-10 flex justify-center md:mt-12">
+          <motion.button
+            type="button"
+            onClick={() => scrollToId("about")}
+            aria-label="Gulir ke bawah"
+            {...(reduced
+              ? {}
+              : {
+                  animate: { y: [0, 8, 0] },
+                  transition: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
+                })}
+            className="inline-flex flex-col items-center gap-1 text-ink-soft transition-colors hover:text-accent"
+          >
+            <span className="font-mono-label">Scroll</span>
+            <ArrowDown size={20} />
+          </motion.button>
+        </div>
+      </div>
 
       {/* Marquee ticker */}
       <div className="relative mt-10 border-y border-ink/10 bg-card/40 py-3">
