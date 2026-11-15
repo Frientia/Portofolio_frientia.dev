@@ -42,53 +42,58 @@ export default function Hero() {
           </span>
         </Reveal>
 
-        {/* Headline raksasa = nama */}
-        <MaskHeading as="h1" lines={profile.headline} className="display-hero text-ink" />
+        {/* Headline raksasa = nama (reveal saat mount) */}
+        <MaskHeading
+          as="h1"
+          lines={profile.headline}
+          immediate
+          className="display-hero text-ink"
+        />
 
         {/* Peran */}
-        <Reveal delay={0.15} className="mt-6">
+        <Reveal delay={0.3} className="mt-6">
           <span className="font-display text-lg text-accent md:text-2xl">
             {profile.role}
           </span>
         </Reveal>
 
-        {/* Tagline + CTA */}
-        <Reveal
-          delay={0.22}
-          className="mt-6 flex flex-col gap-6 pb-10 md:flex-row md:items-end md:justify-between"
-        >
-          <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
-            {profile.tagline}
-          </p>
-          <div className="flex flex-wrap items-center gap-3">
-            <PillButton href={`https://wa.me/${contact.whatsapp}`} external>
-              {contact.cta}
-            </PillButton>
-            <PillButton variant="outline" onClick={() => scrollToId("works")}>
-              Lihat Karya
-            </PillButton>
-          </div>
-        </Reveal>
-      </div>
+        {/* Tagline + CTA (kiri) dan foto (kanan, in-flow) */}
+        <div className="mt-8 grid items-end gap-8 md:mt-10 md:grid-cols-[minmax(0,1fr)_auto]">
+          <Reveal
+            delay={0.4}
+            className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+          >
+            <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
+              {profile.tagline}
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <PillButton href={`https://wa.me/${contact.whatsapp}`} external>
+                {contact.cta}
+              </PillButton>
+              <PillButton variant="outline" onClick={() => scrollToId("works")}>
+                Lihat Karya
+              </PillButton>
+            </div>
+          </Reveal>
 
-      {/* Foto, tilt halus */}
-      <motion.div
-        {...float}
-        className="pointer-events-none absolute bottom-32 right-5 hidden w-40 -rotate-3 md:block lg:right-14 lg:w-48"
-        style={{ zIndex: 5 }}
-      >
-        <div
-          className="rounded-2xl border border-ink/10 bg-card p-2.5"
-          style={{ boxShadow: "var(--shadow-lift)" }}
-        >
-          <img
-            src={profile.photo}
-            alt=""
-            aria-hidden
-            className="h-44 w-full rounded-xl object-cover lg:h-56"
-          />
+          {/* Foto */}
+          <motion.div
+            {...float}
+            className="w-40 -rotate-2 justify-self-start md:w-52 md:justify-self-end"
+          >
+            <div
+              className="rounded-2xl border border-ink/10 bg-card p-2.5"
+              style={{ boxShadow: "var(--shadow-lift)" }}
+            >
+              <img
+                src={profile.photo}
+                alt={profile.name}
+                className="h-48 w-full rounded-xl object-cover md:h-64"
+              />
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Scroll cue */}
       <motion.button
@@ -101,13 +106,13 @@ export default function Hero() {
               animate: { y: [0, 8, 0] },
               transition: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
             })}
-        className="absolute bottom-28 left-1/2 hidden -translate-x-1/2 text-ink-soft transition-colors hover:text-accent md:block"
+        className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 text-ink-soft transition-colors hover:text-accent md:block"
       >
         <ArrowDown size={22} />
       </motion.button>
 
       {/* Marquee ticker */}
-      <div className="relative mt-6 border-y border-ink/10 bg-card/40 py-3">
+      <div className="relative mt-10 border-y border-ink/10 bg-card/40 py-3">
         <Marquee
           items={marquee.hero}
           separator={marquee.separator}

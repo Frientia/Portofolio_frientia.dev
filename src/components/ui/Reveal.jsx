@@ -82,6 +82,7 @@ export function MaskHeading({
   className = "",
   lineClassName = "",
   stagger = 0.09,
+  immediate = false, // true = reveal saat mount (untuk hero / above-the-fold)
 }) {
   const reduced = useReducedMotion();
   return createElement(
@@ -92,9 +93,13 @@ export function MaskHeading({
         <motion.span
           className={lineClassName}
           initial={reduced ? false : { y: "112%" }}
-          whileInView={reduced ? undefined : { y: "0%" }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.95, delay: i * stagger, ease: EASE }}
+          {...(immediate
+            ? { animate: reduced ? undefined : { y: "0%" } }
+            : {
+                whileInView: reduced ? undefined : { y: "0%" },
+                viewport: { once: true, margin: "-60px" },
+              })}
+          transition={{ duration: 0.8, delay: immediate ? 0.1 + i * stagger : i * stagger, ease: EASE }}
         >
           {line}
         </motion.span>

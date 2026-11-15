@@ -59,8 +59,13 @@ export default function Header() {
             aria-label="Kembali ke atas"
             className="group flex shrink-0 items-center gap-2"
           >
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-accent font-display text-[0.7rem] text-bg transition-transform duration-300 group-hover:scale-105">
-              {profile.initials}
+            <span className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-accent/40 transition-transform duration-300 group-hover:scale-105">
+              <img
+                src={profile.photo}
+                alt=""
+                aria-hidden
+                className="h-full w-full object-cover"
+              />
             </span>
             <span className="hidden font-display text-sm tracking-tight text-ink sm:block md:text-base">
               {profile.wordmark}
