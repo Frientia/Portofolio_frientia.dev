@@ -68,7 +68,7 @@ export default function SelectedWorks() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-15% 0px -15% 0px" }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="card-lift group grid overflow-hidden rounded-[1.8rem] border border-ink/5 bg-card md:grid-cols-2"
+                className="card-lift group grid overflow-hidden rounded-[1.8rem] border border-ink/10 bg-card md:grid-cols-2"
                 style={{ boxShadow: "var(--shadow-lift)" }}
               >
                 {/* Gambar */}

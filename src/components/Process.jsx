@@ -23,10 +23,10 @@ function FileBody({ file }) {
           <div className="h-3 w-2/5 rounded-full bg-ink/15" />
           <div className="h-16 rounded-xl bg-card/80" />
           <div className="grid flex-1 grid-cols-2 gap-3">
-            <div className="rounded-xl bg-pink/80" />
-            <div className="rounded-xl bg-sky/80" />
-            <div className="rounded-xl bg-mint/80" />
-            <div className="rounded-xl bg-butter/80" />
+            <div className="rounded-xl bg-accent/25" />
+            <div className="rounded-xl bg-accent2/20" />
+            <div className="rounded-xl bg-accent2/20" />
+            <div className="rounded-xl bg-accent/25" />
           </div>
           <div className="h-8 w-24 rounded-full bg-accent/80" />
         </div>
@@ -96,8 +96,8 @@ function FileWindow({ file, className = "", bodyClassName = "h-56" }) {
       <div className="flex items-center gap-2 border-b border-ink/10 bg-bg/60 px-4 py-2.5">
         <span className="flex gap-1.5" aria-hidden>
           <span className="h-2.5 w-2.5 rounded-full bg-accent/70" />
-          <span className="h-2.5 w-2.5 rounded-full bg-butter" />
-          <span className="h-2.5 w-2.5 rounded-full bg-mint" />
+          <span className="h-2.5 w-2.5 rounded-full bg-accent2/60" />
+          <span className="h-2.5 w-2.5 rounded-full bg-ink/25" />
         </span>
         <span className="font-mono-label ml-2 text-ink-soft">{file.name}</span>
       </div>
@@ -152,7 +152,7 @@ export default function Process() {
                 viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
                 transition={{ duration: 0.4 }}
                 className="scroll-mt-40 border-l-2 py-8 pl-6 md:min-h-[52vh] md:py-12"
-                style={{ borderColor: isActive ? "var(--accent)" : "rgba(53,50,44,0.12)" }}
+                style={{ borderColor: isActive ? "var(--accent)" : "rgba(255,255,255,0.12)" }}
               >
                 <div className="flex items-center gap-4">
                   <span
@@ -201,7 +201,7 @@ export default function Process() {
                   aria-current={active === i}
                   className={`font-mono-label rounded-full border px-3 py-1.5 transition-colors ${
                     active === i
-                      ? "border-ink bg-ink text-bg"
+                      ? "border-accent bg-accent text-bg"
                       : "border-ink/10 bg-card text-ink-soft hover:border-accent"
                   }`}
                 >

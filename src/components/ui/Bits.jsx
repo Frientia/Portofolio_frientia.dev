@@ -42,17 +42,15 @@ export const ICONS = {
   Star,
 };
 
-/** Tint pastel: nama -> { bg, halo, ring } kelas. */
+/** Tint purple-family: nama -> kelas bg. (Nama warna dipertahankan dari konten.) */
 export const TINTS = {
-  pink: { bg: "bg-pink", halo: "bg-pink", hex: "#ffdce3" },
-  peach: { bg: "bg-peach", halo: "bg-peach", hex: "#ffe3d1" },
-  mint: { bg: "bg-mint", halo: "bg-mint", hex: "#d9efe2" },
-  lilac: { bg: "bg-lilac", halo: "bg-lilac", hex: "#e5dff7" },
-  butter: { bg: "bg-butter", halo: "bg-butter", hex: "#fff4c9" },
-  sky: { bg: "bg-sky", halo: "bg-sky", hex: "#d8e9f6" },
+  pink: { bg: "bg-pink" },
+  peach: { bg: "bg-peach" },
+  mint: { bg: "bg-mint" },
+  lilac: { bg: "bg-lilac" },
+  butter: { bg: "bg-butter" },
+  sky: { bg: "bg-sky" },
 };
-
-const EASE = [0.22, 1, 0.36, 1];
 
 /** Label teknis monospace: "Fig. 01 · title". */
 export function FigLabel({ fig, title, className = "" }) {
@@ -75,7 +73,7 @@ export function Chip({ children, tint = "pink", className = "" }) {
   const t = TINTS[tint] || TINTS.pink;
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full ${t.bg} px-4 py-1.5 text-sm font-medium text-ink border border-ink/5 ${className}`}
+      className={`inline-flex items-center gap-2 rounded-full ${t.bg} px-4 py-1.5 text-sm font-medium text-ink border border-ink/10 ${className}`}
     >
       {children}
     </span>
@@ -115,7 +113,7 @@ export function PillButton({
     "group inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm font-semibold transition-colors duration-300";
   const skin =
     variant === "solid"
-      ? "bg-ink text-bg hover:bg-accent"
+      ? "bg-accent text-bg hover:bg-accent2"
       : "bg-card text-ink border border-ink/10 hover:border-accent";
 
   const inner = (
@@ -172,23 +170,14 @@ export function StickerBadge({
   className = "",
 }) {
   const t = TINTS[tint] || TINTS.pink;
-  const reduced = useReducedMotion();
   return (
     <span
-      className={`relative grid place-items-center ${className}`}
+      className={`relative grid shrink-0 place-items-center ${className}`}
       style={{ width: size, height: size }}
       aria-hidden
     >
-      {/* halo pastel */}
       <span
-        className={`absolute inset-0 rounded-[1.1rem] ${t.halo} opacity-60 blur-[6px]`}
-        style={{
-          transform: `rotate(${rotate}deg) scale(1.12)`,
-          animation: reduced ? "none" : "pulse-halo 4s ease-in-out infinite",
-        }}
-      />
-      <span
-        className={`relative grid place-items-center rounded-[1rem] ${t.bg} border border-white/70 text-ink`}
+        className={`grid place-items-center rounded-[1rem] ${t.bg} border border-accent/25 text-accent`}
         style={{
           width: size,
           height: size,
@@ -202,16 +191,16 @@ export function StickerBadge({
   );
 }
 
-/** Balon ucapan pill putih, diputar halus. */
+/** Balon ucapan (kartu gelap), diputar halus. */
 export function SpeechBubble({ children, rotate = 3, className = "" }) {
   return (
     <div
-      className={`relative rounded-3xl bg-card px-5 py-4 text-[0.95rem] leading-relaxed text-ink border border-ink/5 ${className}`}
+      className={`relative rounded-2xl border border-ink/10 bg-card px-5 py-4 text-[0.95rem] leading-relaxed text-ink-soft ${className}`}
       style={{ transform: `rotate(${rotate}deg)`, boxShadow: "var(--shadow-soft)" }}
     >
       <span
         aria-hidden
-        className="absolute -left-1.5 top-6 h-3 w-3 rotate-45 rounded-[2px] bg-card border-l border-b border-ink/5"
+        className="absolute -left-1.5 top-6 h-3 w-3 rotate-45 rounded-[2px] border-b border-l border-ink/10 bg-card"
       />
       {children}
     </div>

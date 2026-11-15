@@ -12,14 +12,14 @@ export default function ContactCTA() {
       id="contact"
       className="relative overflow-hidden scroll-mt-24"
     >
-      {/* Blob dekoratif */}
+      {/* Glow ungu subtil */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-mint opacity-50 blur-3xl"
+        className="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-accent opacity-[0.10] blur-[110px]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-16 top-10 h-80 w-80 rounded-full bg-peach opacity-50 blur-3xl"
+        className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-accent2 opacity-[0.12] blur-[110px]"
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-5 py-24 md:py-32">

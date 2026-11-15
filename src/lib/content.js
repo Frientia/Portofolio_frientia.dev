@@ -9,10 +9,10 @@ export const profile = {
   initials: "FR",
   role: "Web Developer",
   // EDIT: headline raksasa di hero (tiap baris = 1 elemen array)
-  headline: ["LOOKING", "SUSPICIOUSLY", "GOOD"],
-  kicker: "Portfolio · 2026 · Bandung, ID", // EDIT
+  headline: ["MUHAMAD", "YAJID RIZKY"],
+  kicker: "Web Developer · Bandung, Indonesia", // EDIT
   tagline:
-    "Web Developer crafting smooth, modern, and interactive user experiences.",
+    "I design and build for the web — backend-minded, currently growing into full-stack.",
   photo: "/profile.jpg",
   availability: "Available for freelance & full-time", // EDIT
   localTimezone: "Asia/Jakarta",
@@ -20,19 +20,32 @@ export const profile = {
 };
 
 // ---------------------------------------------------------------------------
+//  Navigasi header — tautan ke tiap section
+// ---------------------------------------------------------------------------
+export const nav = [
+  { label: "About", id: "about" },
+  { label: "Jalur", id: "journey" },
+  { label: "Karya", id: "works" },
+  { label: "Proses", id: "process" },
+  { label: "Testimoni", id: "testimonials" },
+  { label: "FAQ", id: "faq" },
+  { label: "Kontak", id: "contact" },
+];
+
+// ---------------------------------------------------------------------------
 //  Marquee / ticker — kata berulang dipisah simbol •
 // ---------------------------------------------------------------------------
 export const marquee = {
   hero: [
     "Web Developer",
-    "Backend-minded",
     "PHP · MySQL",
-    "Learning in public",
+    "JavaScript",
+    "Backend-minded",
     "Full-stack in progress",
-    "Let's build something",
+    "Open to work",
   ],
   // EDIT: ticker penutup di footer
-  footer: ["Let's Talk", "Open to work", "Say hello", "Frientia", "Terima kasih"],
+  footer: ["Let's Talk", "Open to work", "Frientia", "Terima kasih"],
   separator: "•",
 };
 
@@ -50,7 +63,7 @@ export const about = {
   // EDIT: 3 chip trait pendek
   traits: ["Backend-minded", "Detail-oriented", "Always learning"],
   photo: "/profile.jpg",
-  photoCaption: "me, probably overthinking a query", // EDIT: microcopy lucu
+  photoCaption: "Bandung, Indonesia", // EDIT
 };
 
 // ---------------------------------------------------------------------------
@@ -61,9 +74,9 @@ export const about = {
 export const journey = {
   fig: "Fig. 02",
   figTitle: "The path",
-  heading: ["MY LITTLE", "SUPERPOWER", "PATH"], // EDIT
+  heading: ["WHAT I", "BRING"], // EDIT
   intro:
-    "Scroll dan ikuti garisnya — tiap pemberhentian adalah satu keahlian yang kupakai buat bikin web jadi hidup.",
+    "Ikuti garisnya — tiap pemberhentian adalah satu keahlian inti yang kupakai dari awal sampai sebuah proyek rilis.",
   stops: [
     {
       id: "php",
@@ -71,47 +84,47 @@ export const journey = {
       word2: "SIDE",
       icon: "Server", // nama ikon lucide-react
       bubble:
-        "PHP adalah rumah pertamaku. Dari form login sampai logika bisnis, di sini semua bermula.",
+        "Fondasi utamaku. Dari autentikasi sampai logika bisnis, sebagian besar proyekku dibangun dengan PHP.",
       tint: "peach",
       label: "PHP",
     },
     {
       id: "mysql",
       word1: "DATA",
-      word2: "KEEPER",
+      word2: "LAYER",
       icon: "Database",
       bubble:
-        "MySQL tempatku merapikan data — relasi, query, dan skema yang nggak bikin pusing di kemudian hari.",
+        "Merancang skema, relasi, dan query yang efisien supaya data rapi dan gampang dipelihara.",
       tint: "sky",
       label: "MySQL",
     },
     {
       id: "javascript",
-      word1: "MAKES IT",
-      word2: "MOVE",
+      word1: "DYNAMIC",
+      word2: "INTERFACE",
       icon: "Sparkles",
       bubble:
-        "JavaScript bikin halaman terasa hidup: interaksi, animasi, dan pengalaman yang mulus.",
+        "Menambahkan interaksi di sisi klien agar halaman terasa responsif dan nyaman dipakai.",
       tint: "butter",
       label: "JavaScript",
     },
     {
       id: "git",
-      word1: "TIME",
-      word2: "TRAVEL",
+      word1: "VERSION",
+      word2: "CONTROL",
       icon: "GitBranch",
       bubble:
-        "Git = mesin waktu kode. Eksperimen bebas, karena selalu ada jalan buat balik.",
+        "Bekerja rapi dan aman: perubahan terlacak, eksperimen bebas, dan selalu bisa kembali.",
       tint: "mint",
       label: "Git",
     },
     {
       id: "github",
-      word1: "SHIP",
-      word2: "IT",
+      word1: "OPEN",
+      word2: "SOURCE",
       icon: "Github",
       bubble:
-        "GitHub tempatku berbagi dan berkolaborasi. Kalau belum di-push, artinya belum nyata.",
+        "Tempat kode dibagikan dan kolaborasi terjadi. Semua proyek publikku ada di GitHub.",
       tint: "lilac",
       label: "GitHub",
     },

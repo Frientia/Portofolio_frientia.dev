@@ -34,7 +34,7 @@ export default function Testimonials() {
               viewport={{ once: true, margin: "-80px" }}
               whileHover={reduced ? undefined : { rotate: 0, y: -6 }}
               transition={{ duration: 0.6, delay: reduced ? 0 : i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="card-lift flex flex-col justify-between rounded-[1.6rem] border border-ink/5 bg-card p-6"
+              className="card-lift flex flex-col justify-between rounded-[1.6rem] border border-ink/10 bg-card p-6"
               style={{ boxShadow: "var(--shadow-soft)" }}
             >
               <div>

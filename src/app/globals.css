@@ -1,28 +1,30 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   PALET PASTEL + TOKEN TIPOGRAFI
+   PALET GELAP (HITAM + UNGU) + TOKEN TIPOGRAFI
    ========================================================================== */
 :root {
-  --bg: #faf6f0;
-  --ink: #35322c;
-  --ink-soft: #6b665c;
+  --bg: #0b0a10; /* near-black bernuansa ungu */
+  --ink: #ece9f5; /* teks utama */
+  --ink-soft: #a49dbb; /* teks sekunder */
 
-  --pink: #ffdce3;
-  --peach: #ffe3d1;
-  --mint: #d9efe2;
-  --lilac: #e5dff7;
-  --butter: #fff4c9;
-  --sky: #d8e9f6;
+  /* Tint purple-family (gelap, subtil) — pengganti pastel */
+  --pink: #34203d; /* plum */
+  --peach: #2c2140; /* ungu */
+  --mint: #1d2740; /* indigo-slate */
+  --lilac: #2a2444; /* lavender */
+  --butter: #38294a; /* violet */
+  --sky: #1a2338; /* blue-purple */
 
-  --accent: #ff9e8f; /* coral pastel — stroke path & aksen utama */
-  --accent-2: #9db8a5; /* sage — aksen sekunder */
+  --accent: #a78bfa; /* violet — aksen utama & stroke path */
+  --accent-2: #7c6cf0; /* violet lebih dalam — aksen sekunder */
 
-  --card: #ffffff;
-  --border-soft: rgba(53, 50, 44, 0.1);
+  --card: #14111d; /* permukaan kartu */
+  --border-soft: rgba(255, 255, 255, 0.09);
 
-  --shadow-soft: 0 10px 30px -12px rgba(53, 50, 44, 0.25);
-  --shadow-lift: 0 22px 50px -18px rgba(53, 50, 44, 0.35);
+  --shadow-soft: 0 10px 30px -14px rgba(0, 0, 0, 0.85);
+  --shadow-lift: 0 0 0 1px rgba(167, 139, 250, 0.18),
+    0 24px 60px -24px rgba(0, 0, 0, 0.95);
 }
 
 /* Font --font-display / --font-body / --font-mono disetel oleh next/font di <html>.
@@ -65,6 +67,7 @@
 html {
   scroll-behavior: auto; /* Lenis yang atur */
   -webkit-text-size-adjust: 100%;
+  color-scheme: dark;
 }
 
 body {
@@ -78,7 +81,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #fff;
+  color: var(--bg);
 }
 
 /* Lenis */

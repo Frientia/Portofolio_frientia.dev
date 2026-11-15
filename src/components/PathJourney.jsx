@@ -66,7 +66,7 @@ function PathStop({ stop, index, progress, alignRight }) {
         className="w-full md:w-[46%]"
       >
         <div
-          className="rounded-[1.8rem] border border-ink/5 bg-card/85 p-6 backdrop-blur-sm md:p-8"
+          className="rounded-[1.8rem] border border-ink/10 bg-card/85 p-6 backdrop-blur-sm md:p-8"
           style={{ boxShadow: "var(--shadow-soft)" }}
         >
           {/* Judul raksasa 2 kata + badge menyelip */}
@@ -155,7 +155,7 @@ export default function PathJourney() {
           <path
             d={DESKTOP_D}
             fill="none"
-            stroke="rgba(53,50,44,0.10)"
+            stroke="rgba(255,255,255,0.08)"
             strokeWidth={12}
             strokeLinecap="round"
             vectorEffect="non-scaling-stroke"

@@ -37,10 +37,7 @@ export default function About() {
           <Stagger className="mt-8 flex flex-wrap gap-3" stagger={0.08}>
             {about.traits.map((t, i) => (
               <StaggerItem key={t}>
-                <Chip tint={["pink", "mint", "sky"][i % 3]}>
-                  <span aria-hidden>✦</span>
-                  {t}
-                </Chip>
+                <Chip tint={["pink", "mint", "sky"][i % 3]}>{t}</Chip>
               </StaggerItem>
             ))}
           </Stagger>
@@ -64,7 +61,7 @@ export default function About() {
             viewport={{ once: true, margin: "-80px" }}
             whileHover={reduced ? undefined : { rotate: 0, scale: 1.03 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative rounded-[1.6rem] border border-white/70 bg-card p-3 pb-12"
+            className="relative rounded-[1.6rem] border border-ink/10 bg-card p-3 pb-12"
             style={{ boxShadow: "var(--shadow-lift)" }}
           >
             <img
@@ -77,20 +74,14 @@ export default function About() {
             </figcaption>
           </motion.figure>
 
-          {/* Stiker kecil menempel */}
-          <motion.div
-            {...(reduced
-              ? {}
-              : {
-                  animate: { y: [0, -10, 0], rotate: [8, 12, 8] },
-                  transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-                })}
-            className="absolute -right-4 -top-6 grid h-20 w-20 place-items-center rounded-2xl bg-butter text-center font-display text-xs uppercase leading-tight text-ink"
-            style={{ boxShadow: "var(--shadow-soft)", transform: "rotate(10deg)" }}
-            aria-hidden
+          {/* Badge ketersediaan */}
+          <span
+            className="absolute -right-2 -top-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-bg px-3 py-1.5"
+            style={{ boxShadow: "var(--shadow-soft)" }}
           >
-            open to work
-          </motion.div>
+            <span className="h-2 w-2 rounded-full bg-accent" aria-hidden />
+            <span className="font-mono-label text-ink">Open to work</span>
+          </span>
         </Reveal>
       </div>
     </section>
