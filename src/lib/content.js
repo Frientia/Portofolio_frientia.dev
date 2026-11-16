@@ -52,7 +52,7 @@ export const about = {
 export const journey = {
   fig: "Fig. 02",
   figTitle: "The path",
-  heading: ["WHAT I", "BRING"],
+  heading: ["WHAT I BRING"],
   intro:
     "Ikuti garisnya — tiap pemberhentian adalah satu keahlian inti yang kupakai dari awal sampai sebuah proyek rilis.",
   stops: [
@@ -112,7 +112,7 @@ export const journey = {
 export const works = {
   fig: "Fig. 03",
   figTitle: "Selected work",
-  heading: ["THINGS", "I BUILT"],
+  heading: ["THINGS I BUILT"],
   intro: "Beberapa repo yang paling mewakili perjalananku sejauh ini.",
   items: [
     {
@@ -181,7 +181,7 @@ export const works = {
 export const process = {
   fig: "Fig. 04",
   figTitle: "How I work",
-  heading: ["FROM BRIEF", "TO LIVE"],
+  heading: ["FROM BRIEF TO LIVE"],
   steps: [
     {
       no: "01",
@@ -253,7 +253,7 @@ export const process = {
 export const resume = {
   fig: "Fig. 05",
   figTitle: "Resume",
-  heading: ["ON", "PAPER"],
+  heading: ["ON PAPER"],
   intro:
     "Ringkasan latar belakang, pengalaman relevan, dan kemampuan — versi lengkapnya bisa diunduh sebagai PDF.",
   cvFile: "/CV-Muhamad-Yajid-Rizky.pdf",
@@ -298,7 +298,7 @@ export const resume = {
 export const testimonials = {
   fig: "Fig. 06",
   figTitle: "Kind words",
-  heading: ["PEOPLE", "SAY"],
+  heading: ["PEOPLE SAY"],
   items: [
     {
       name: "Nama Klien",
@@ -330,7 +330,7 @@ export const testimonials = {
 export const faq = {
   fig: "Fig. 07",
   figTitle: "Questions",
-  heading: ["ASK ME", "ANYTHING"],
+  heading: ["ASK ME ANYTHING"],
   items: [
     {
       q: "Teknologi apa yang paling sering kamu pakai?",
@@ -358,7 +358,7 @@ export const faq = {
 export const contact = {
   fig: "Fig. 08",
   figTitle: "Contact",
-  heading: ["LET'S BUILD", "SOMETHING", "GOOD"],
+  heading: ["LET'S BUILD SOMETHING GOOD"],
   statement:
     "Punya proyek, ide, atau cuma mau ngobrol soal web? Aku senang dengar darimu.",
   cta: "Let's Talk",
