@@ -88,11 +88,18 @@ export function ArrowCircle({
   icon: Icon = ArrowUpRight,
   className = "",
   size = 18,
+  bg,
+  fg,
 }) {
   return (
     <span
-      className={`grid place-items-center rounded-full bg-ink text-bg transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:rotate-45 ${className}`}
-      style={{ width: "1.9em", height: "1.9em" }}
+      className={`grid place-items-center rounded-full transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:rotate-45 ${className}`}
+      style={{
+        width: "1.9em",
+        height: "1.9em",
+        background: bg || "var(--ink)",
+        color: fg || "var(--bg)",
+      }}
       aria-hidden
     >
       <Icon size={size} strokeWidth={2.4} />
@@ -124,7 +131,8 @@ export function PillButton({
       <span>{children}</span>
       <ArrowCircle
         icon={icon}
-        className={variant === "solid" ? "bg-bg text-ink" : ""}
+        bg={variant === "solid" ? "var(--bg)" : "var(--accent)"}
+        fg={variant === "solid" ? "var(--accent)" : "var(--bg)"}
       />
     </>
   );
