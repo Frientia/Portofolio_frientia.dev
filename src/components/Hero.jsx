@@ -40,40 +40,24 @@ export default function Hero() {
           </span>
         </Reveal>
 
-        <MaskHeading
-          as="h1"
-          lines={profile.headline}
-          immediate
-          className="display-hero text-ink"
-        />
-
-        <Reveal delay={0.3} className="mt-6">
-          <span className="font-display text-lg text-accent md:text-2xl">
-            {profile.role}
-          </span>
-        </Reveal>
-
-        <div className="mt-8 grid items-end gap-8 md:mt-10 md:grid-cols-[minmax(0,1fr)_auto]">
-          <Reveal
-            delay={0.4}
-            className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
-          >
-            <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
-              {profile.tagline}
-            </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <PillButton href={`https://wa.me/${contact.whatsapp}`} external>
-                {contact.cta}
-              </PillButton>
-              <PillButton variant="outline" onClick={() => scrollToId("works")}>
-                Lihat Karya
-              </PillButton>
-            </div>
-          </Reveal>
+        <div className="mt-6 grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:gap-10">
+          <div>
+            <MaskHeading
+              as="h1"
+              lines={profile.headline}
+              immediate
+              className="display-hero text-ink"
+            />
+            <Reveal delay={0.3} className="mt-5">
+              <span className="font-display text-lg text-accent md:text-2xl">
+                {profile.role}
+              </span>
+            </Reveal>
+          </div>
 
           <motion.div
             {...float}
-            className="w-40 -rotate-2 justify-self-start md:w-52 md:justify-self-end"
+            className="w-40 -rotate-2 justify-self-start md:mt-2 md:w-52 md:justify-self-end"
           >
             <div
               className="rounded-2xl border border-ink/10 bg-card p-2.5"
@@ -87,6 +71,23 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
+
+        <Reveal
+          delay={0.4}
+          className="mt-8 flex flex-col gap-6 md:mt-10 md:flex-row md:items-center md:justify-between"
+        >
+          <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
+            {profile.tagline}
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <PillButton href={`https://wa.me/${contact.whatsapp}`} external>
+              {contact.cta}
+            </PillButton>
+            <PillButton variant="outline" onClick={() => scrollToId("works")}>
+              Lihat Karya
+            </PillButton>
+          </div>
+        </Reveal>
 
         <div className="mt-10 flex justify-center md:mt-12">
           <motion.button
