@@ -74,7 +74,7 @@ export function MaskHeading({
   className = "",
   lineClassName = "",
   stagger = 0.09,
-  immediate = false,
+  immediate = true,
 }) {
   const reduced = useReducedMotion();
   return createElement(
