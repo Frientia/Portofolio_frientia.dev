@@ -89,9 +89,9 @@ export function MaskHeading({
             ? { animate: reduced ? undefined : { y: "0%" } }
             : {
                 whileInView: reduced ? undefined : { y: "0%" },
-                viewport: { once: true, margin: "-60px" },
+                viewport: { once: true, margin: "0px 0px 25% 0px" },
               })}
-          transition={{ duration: 0.8, delay: immediate ? 0.1 + i * stagger : i * stagger, ease: EASE }}
+          transition={{ duration: 0.7, delay: immediate ? 0.1 + i * stagger : i * stagger, ease: EASE }}
         >
           {line}
         </motion.span>

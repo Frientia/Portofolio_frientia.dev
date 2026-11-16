@@ -39,29 +39,30 @@ journey.stops.forEach((_, i) => {
 desktopPts.push([50, 103]);
 const DESKTOP_D = catmullRomPath(desktopPts);
 
-function PathStop({ stop, index, progress, alignRight }) {
+function PathStop({ stop, index, alignRight }) {
   const reduced = useReducedMotion();
-  const c = (index + 0.5) / N;
+  const ref = useRef(null);
   const Icon = ICONS[stop.icon] || ICONS.Sparkles;
 
-  const opacity = useTransform(progress, [c - 0.12, c - 0.01], [0, 1]);
-  const scale = useTransform(progress, [c - 0.12, c - 0.01], [0.86, 1]);
-  const y = useTransform(progress, [c - 0.12, c - 0.01], [40, 0]);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 0.85", "center 0.5"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.88, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [36, 0]);
 
   const style = reduced ? undefined : { opacity, scale, y };
   const rotate = index % 2 === 0 ? -3 : 3;
 
   return (
     <div
+      ref={ref}
       className={`relative flex min-h-[76vh] items-center md:min-h-[82vh] ${
         alignRight ? "md:justify-end" : "md:justify-start"
       }`}
     >
-      <motion.div
-        style={style}
-        initial={reduced ? false : { opacity: 0 }}
-        className="w-full md:w-[46%]"
-      >
+      <motion.div style={style} className="w-full md:w-[46%]">
         <div
           className="rounded-[1.8rem] border border-ink/10 bg-card/85 p-6 backdrop-blur-sm md:p-8"
           style={{ boxShadow: "var(--shadow-soft)" }}
@@ -176,7 +177,6 @@ export default function PathJourney() {
               key={stop.id}
               stop={stop}
               index={i}
-              progress={scrollYProgress}
               alignRight={i % 2 === 1}
             />
           ))}
